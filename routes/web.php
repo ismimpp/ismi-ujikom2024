@@ -12,6 +12,6 @@ Route::get('/login', [loginController::class, 'login']);
 Route::get('/register', function(){
     return view("register");
 });
-Route::get('/home', function(){
-    return view("home");
+Route::get('/data_produk', function(){
+    return view("data_produk");
 });

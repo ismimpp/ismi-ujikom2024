@@ -6,106 +6,173 @@
     <title>login</title> <href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
 </head>
 <body>
-    <h1><center>LOGIN DULU DISINI YAA!!</center></h1>
     <form method="POST" action="login">
     @method('POST')
     @CSRF
+    
     <style>
-        a {
-  text-decoration: none;
-}
+@import "compass/css3";
+
+* { box-sizing: border-box; }
+
 body {
-  background-image: url('{{asset('foto/gambar.jpg')}}');
-  background-size: cover;
-  background-repeat: no-repeat;
+	font-family: "HelveticaNeue-Light","Helvetica Neue Light","Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;
+  color:white;
+  font-size:12px;
+  background: url('{{ asset('foto/kasir.jpg')}}');
 }
+
+form {
+ 	background:#C38154; 
+  width:300px;
+  margin:30px auto;
+  border-radius:0.4em;
+  border:1px solid #191919;
+  overflow:hidden;
+  position:relative;
+  box-shadow: 0 5px 10px 5px rgba(0,0,0,0.2);
+}
+
+form:after {
+  content:"";
+  display:block;
+  position:absolute;
+  height:1px;
+  width:100px;
+  left:20%;
+  background:linear-gradient(left, #111, #444, #b6b6b8, #444, #111);
+  top:0;
+}
+
+form:before {
+ 	content:"";
+  display:block;
+  position:absolute;
+  width:8px;
+  height:5px;
+  border-radius:50%;
+  left:34%;
+  top:-7px;
+  box-shadow: 0 0 6px 4px #fff;
+}
+
+.inset {
+ 	padding:20px; 
+  border-top:1px solid #19191a;
+}
+
+form h1 {
+  font-size:18px;
+  text-shadow:0 1px 0 white;
+  text-align:center;
+  padding:15px 0;
+  border-bottom:1px solid rgba(0,0,0,1);
+  position:relative;
+}
+
+form h1:after {
+ 	content:"";
+  display:block;
+  width:250px;
+  height:100px;
+  position:absolute;
+  top:0;
+  left:50px;
+  pointer-events:none;
+  transform:rotate(70deg);
+  background:linear-gradient(50deg, rgba(255,255,255,0.15), rgba(0,0,0,0));
+  
+}
+
 label {
-  font-family: "Raleway", sans-serif;
-  font-size: 11pt;
+ 	color:#666;
+  display:block;
+  padding-bottom:9px;
 }
-#forgot-pass {
-  color: #2dbd6e;
-  font-family: "Raleway", sans-serif;
-  font-size: 10pt;
-  margin-top: 3px;
-  text-align: right;
+
+input[type=text],
+input[type=password] {
+ 	width:100%;
+  padding:8px 5px;
+  background:#F5F0BB;
+  border:1px solid #222;
+  box-shadow:
+    0 1px 0 rgba(255,255,255,0.1);
+  border-radius:0.3em;
+  margin-bottom:20px;
 }
-#card {
-  background: #85A389;
-  border-radius: 8px;
-  box-shadow: 1px 2px 8px rgba(0, 0, 0, 0.65);
-  height: 250px;
-  margin: 6rem auto 8.1rem auto;
-  width: 329px;
+
+label[for=remember]{
+ 	color:white;
+  display:inline-block;
+  padding-bottom:0;
+  padding-top:5px;
 }
-#card-content {
-  padding: 12px 44px;
+
+input[type=checkbox] {
+ 	display:inline-block;
+  vertical-align:top;
 }
-#card-title {
-  font-family: "Raleway Thin", sans-serif;
-  letter-spacing: 4px;
-  padding-bottom: 15px;
-  padding-top: 13px;
-  text-align: center;
+
+.p-container {
+ 	padding:0 20px 20px 20px; 
 }
-#signup {
-  color: #2dbd6e;
-  font-family: "Raleway", sans-serif;
-  font-size: 10pt;
-  margin-top: 16px;
-  text-align: center;
+
+.p-container:after {
+ 	clear:both;
+  display:table;
+  content:"";
 }
-#submit-btn {
-  background: -webkit-linear-gradient(right, #a6f77b, #2dbd6e);
-  border: none;
-  border-radius: 21px;
-  box-shadow: 0px 1px 8px #24c64f;
-  cursor: pointer;
-  color: white;
-  font-family: "Raleway SemiBold", sans-serif;
-  height: 42.3px;
-  margin: 0 auto;
-  margin-top: 50px;
-  transition: 0.25s;
-  width: 153px;
+
+.p-container span {
+  display:block;
+  float:left;
+  color:#F5F0BB;
+  padding-top:8px;
 }
-#submit-btn:hover {
-  box-shadow: 0px 1px 18px #24c64f;
+
+input[type=submit] {
+ 	padding:5px 20px;
+  border:1px solid rgba(0,0,0,0.4);
+  text-shadow:0 -1px 0 rgba(0,0,0,0.4);
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.3),
+    inset 0 10px 10px rgba(255,255,255,0.1);
+  border-radius:0.3em;
+  background:#0184ff;
+  color:white;
+  float:right;
+  font-weight:bold;
+  cursor:pointer;
+  font-size:13px;
 }
-.form {
-  align-items: left;
-  display: flex;
-  flex-direction: column;
+
+input[type=submit]:hover {
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.3),
+    inset 0 -10px 10px rgba(255,255,255,0.1);
 }
-.form-border {
-  background: -webkit-linear-gradient(right, #a6f77b, #2ec06f);
-  height: 1px;
-  width: 100%;
-}
-.form-content {
-  background: #fbfbfb;
-  border: none;
-  outline: none;
-  padding-top: 14px;
-}
-.underline-title {
-  background: -webkit-linear-gradient(right, #a6f77b, #2ec06f);
-  height: 2px;
-  margin: -1.1rem auto 0 auto;
-  width: 89px;
+
+input[type=text]:hover,
+input[type=password]:hover,
+label:hover ~ input[type=text],
+label:hover ~ input[type=password] {
+ 	background:#F5F0BB;
 }
     </style>
 
- <center><div class="container">
-          <h1>Login</h1>
-            <form>
-                <label>Username</label><br>
-                <input type="text"><br>
-                <label>Password</label><br>
-                <input type="password"><br>
-                <button>Login disini</button>
-            </form>
-        </div></center> 
-   
+<h1>LOGIN DULU DISINI</h1>
+  <div class="inset">
+  <p>
+    <label for="email">USERNAME</label>
+    <input type="text" name="nama">
+  </p>
+  <p>
+    <label for="password">PASSWORD</label>
+    <input type="password" name="password" id="password">
+  </p>
+  <center><a link href = "{{('register')}}"><button type="submit" name="login" class="btn-input">submit</button>
+  <div class="bottom">
+    <p>Belum punya akun? Register dulu</p> <a link href="{{('register')}}"></a><center>
 </body>
 </html>
