@@ -1,6 +1,6 @@
 <html>
     <head>
-        <title>App Name - @yield('title')</title>
+        <title>KASIR</title>
 
         <link rel="stylesheet" href={{asset("bs/css/bootstrap.min.css")}}>
     </head>

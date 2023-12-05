@@ -19,11 +19,11 @@ body {
 	font-family: "HelveticaNeue-Light","Helvetica Neue Light","Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;
   color:white;
   font-size:12px;
-  background: url('{{ asset('foto/kasir.jpg')}}');
+  background: url('{{ asset('foto/another_bg.jpg')}}');
 }
 
 form {
- 	background:#C38154; 
+ 	background:#8EACCD; 
   width:300px;
   margin:30px auto;
   border-radius:0.4em;
@@ -138,7 +138,7 @@ input[type=submit] {
   box-shadow:
     inset 0 1px 0 rgba(255,255,255,0.3),
     inset 0 10px 10px rgba(255,255,255,0.1);
-  border-radius:0.3em;
+  border-radius:0;
   background:#0184ff;
   color:white;
   float:right;

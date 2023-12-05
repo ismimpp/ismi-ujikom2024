@@ -19,11 +19,11 @@ body {
 	font-family: "HelveticaNeue-Light","Helvetica Neue Light","Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;
   color:white;
   font-size:12px;
-  background: url('{{ asset('foto/kasir.jpg')}}');
+  background: url('{{ asset('foto/another_bg.jpg')}}');
 }
 
 form {
- 	background:#C38154; 
+ 	background:#8EACCD; 
   width:300px;
   margin:30px auto;
   border-radius:0.4em;
