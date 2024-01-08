@@ -1,3 +1,5 @@
+@include('layout.navbar')
+@section ('content')
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,8 +16,7 @@
 
 <h1><center>DATA PELANGGAN</center></h1>
 
-  @section('content')
-    <table class="table">
+    <table class="table table-primary">
   <thead>
     <tr>
       <th scope="col">Nama</th>
