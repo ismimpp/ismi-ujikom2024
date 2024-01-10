@@ -19,15 +19,15 @@ body {
 	font-family: "HelveticaNeue-Light","Helvetica Neue Light","Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;
   color:white;
   font-size:12px;
-  background: url('{{ asset('foto/another_bg.jpg')}}');
+  background: url('{{ asset('foto/cashier.jpg')}}');
 }
 
 form {
- 	background:#8EACCD; 
+ 	background:#607274; 
   width:300px;
   margin:30px auto;
-  border-radius:0.4em;
-  border:1px solid #191919;
+  top:120px;
+  border-radius:0.5em;
   overflow:hidden;
   position:relative;
   box-shadow: 0 5px 10px 5px rgba(0,0,0,0.2);
@@ -57,7 +57,7 @@ form:before {
 }
 
 .inset {
- 	padding:20px; 
+ 	padding:10px; 
   border-top:1px solid #19191a;
 }
 
@@ -85,7 +85,7 @@ form h1:after {
 }
 
 label {
- 	color:#666;
+ 	color:#F8FAE5;
   display:block;
   padding-bottom:9px;
 }
@@ -133,14 +133,9 @@ input[type=checkbox] {
 
 input[type=submit] {
  	padding:5px 20px;
-  border:1px solid rgba(0,0,0,0.4);
   text-shadow:0 -1px 0 rgba(0,0,0,0.4);
-  box-shadow:
-    inset 0 1px 0 rgba(255,255,255,0.3),
-    inset 0 10px 10px rgba(255,255,255,0.1);
-  border-radius:0.3em;
-  background:#0184ff;
-  color:white;
+  background:#F8FAE5;
+  color: white;
   float:right;
   font-weight:bold;
   cursor:pointer;

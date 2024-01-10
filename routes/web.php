@@ -24,3 +24,15 @@ Route::get('/data_penjualan', function(){
 Route::get('/home', function(){
     return view("home");
 });
+Route::get('/tambah_produk', function(){
+    return view("tambah_produk");
+});
+Route::get('/tambah_pelanggan', function(){
+    return view("tambah_pelanggan");
+});
+Route::get('/update_produk', function(){
+    return view("update_produk");
+});
+Route::get('/update_pelanggan', function(){
+    return view("update_pelanggan");
+});
