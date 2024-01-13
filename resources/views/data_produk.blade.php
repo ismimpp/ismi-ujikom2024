@@ -1,13 +1,6 @@
-@include('layout.navbar')
+@extends('layout.app')
+
 @section ('content')
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=h1, initial-scale=1.0">
-    <title>Document</title> <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-</head>
-<body>
 <style>
   .buat{
     font-size: 15px;
@@ -46,7 +39,20 @@ h1{
       <th scope="col">Aksi</th>
     </tr>
   </thead>
-  <tbody>
+  <tbody class="table-group-divider">
+    @foreach($produk as $produk)
+    <tr>
+      <th scope="row"><center>{{ $produk->ProdukID }}</center></th>
+      <th scope="row"><center>{{ $produk->NamaProduk }}</center></th>
+      <th scope="row"><center>{{ $produk->Harga }}</center></th>
+      <th scope="row"><center>{{ $produk->Stock }}</center></th>
+      <td><center>
+        <a href="/data_produk/{{$produk->ProdukID}}" type="button" class="btn btn-outline-danger" onclick="confirm('Apakah anda yakin ingin menghapus data ini?')"><i class="fas fa-trash"></i></a>
+        <a href="/update_produk/{{ $produk->ProdukID }}" type="button" class="btn btn-outline-success"></class="fas fa-pen-to-square"></i></a>
+        <button type="button" class="btn btn-primary" data-bs-topggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo">Open modal for @mdo</button>
+      </center></td>
+    </tr>
+    @endforeach
   <tbody>
     <tr>
       <td></td>
@@ -60,5 +66,4 @@ h1{
 </tbody>
   </div>
 </div>
-</body>
-</html>
+@endsection

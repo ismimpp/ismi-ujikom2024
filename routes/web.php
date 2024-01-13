@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\loginController;
+use App\Http\Controllers\ProdukController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -15,6 +16,7 @@ Route::get('/register', function(){
 Route::get('/data_produk', function(){
     return view("data_produk");
 });
+
 Route::get('/data_pelanggan', function(){
     return view("data_pelanggan");
 });

@@ -8,15 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class produk extends Model
 {
     use HasFactory;
+    public $timstamps = false;
+    protected $table = "produk";
 
-    /**
-     * fillable
-     * 
-     * @var array
-     */
-    protected $fillable = [
-        'image',
-        'title',
-        'content',
-    ];
+    protected $fillable = ['produkID', 'NamaProduk', 'Harga', 'stock'];
 }
