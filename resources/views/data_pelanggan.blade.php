@@ -1,6 +1,5 @@
 @extends('layout.app')
 
-
 @section ('content')
 <style>
   .buat{
@@ -26,31 +25,36 @@ h1{
 
 <div class="buat">
   <br><br>
-      <h1><center>DATA PELANGGAN</center></h1>
 
-      <div class="container">
-
-
-    <table class="table table-secondary">
+  <h1><center> {{ $judul }}</center></h1>
+  
+  <div class="container">
+  <table class="table table-secondary">
   <thead>
     <tr>
-      <th scope="col">Nama</th>
+      <th scope="col">ID Pelanggan</th>
+      <th scope="col">Nama Pelanggan</th>
       <th scope="col">Alamat</th>
-      <th scope="col">No Telp</th>
+      <th scope="col">NomorTelepon</th>
       <th scope="col">Aksi</th>
     </tr>
   </thead>
-  <tbody>
+<tbody class="table-group-divider">
+    @foreach($pelanggan as $pelanggan)
     <tr>
-      <td></td>
-      <td></td>
-      <td></td>
+      <th scope="row">{{ $pelanggan->PelangganID }}</th>
+      <th scope="row">{{ $pelanggan->NamaPelanggan}}</th>
+      <th scope="row">{{ $pelanggan->Alamat }}</th>
+      <th scope="row">{{ $pelanggan->NomorTelepon }}</th>
+      
       <td class="actions">
-        <a href="{{('update_pelanggan')}}"> <button type="button" class="btn btn-outline-success">update</button></a>
-        <a href="#"> <button type="button" class="btn btn-outline-danger">hapus</button></a>
+        <a href="update_pelanggan"> <button type="button" class="btn btn-outline-info">update</button></a>
+        <a href="/Pelanggan/{{$pelanggan->PelangganID}}"> <button type="button" class="btn btn-outline-danger">hapus<i class="fas fa-trash"></i></button></a>
 </td>
-    </tr>
+</tr>
 </tbody>
+    @endforeach
+</table>
   </div>
 </div>
 @endsection

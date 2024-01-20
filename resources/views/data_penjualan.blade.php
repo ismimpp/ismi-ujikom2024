@@ -45,8 +45,7 @@ h1{
       <td></td>
       <td></td>
       <td class="actions">
-        <a href="#"> <button type="button" class="btn btn-outline-success">update</button></a>
-        <a href="#"> <button type="button" class="btn btn-outline-danger">hapus</button></a>
+        <a href="{{('detail_penjualan')}}"> <button type="button" class="btn btn-outline-success">detail</button></a>
 </td>
     </tr>
 </tbody>

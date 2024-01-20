@@ -7,22 +7,9 @@
     <div class="collapse navbar-collapse" id="navbarScroll">
       <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
         <li class="nav-item">
-          <a class="nav-link" href="{{('data_produk')}}">data produk</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="{{('data_pelanggan')}}">data pelanggan</a>
-        </li>
-        <li class="nav-item">
           <a class="nav-link" href="{{('data_penjualan')}}">data penjualan</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="{{('tambah_produk')}}">tambah produk</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="{{('tambah_pelanggan')}}">tambah pelanggan</a>
-        </li>
-    </div>
-    <div class="dropdown">
+        <div class="dropdown">
   <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
     produk
 </button>
@@ -38,5 +25,6 @@
     <li><a class="dropdown-item" href="{{('tambah_pelanggan')}}">tambah pelanggan</a></li>
   </ul>
 </div>
+    </div>
   </div>
 </nav>

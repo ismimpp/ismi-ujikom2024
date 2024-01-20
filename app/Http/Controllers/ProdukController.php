@@ -1,37 +1,29 @@
 <?php
 
 namespace App\Http\Controllers;
-
 use Illuminate\Http\Request;
-use App\Models\produk;
-
+use Illuminate\Support\Facades\DB;
+use App\Models\Produk;
 
 class ProdukController extends Controller
 {
-    //function produk(){
-    //    return view('Produk');
-    //}
-function Produk(){
-    $judul = "Data Produk";
+    function produk(){
+        $judul = "data_produk";
+        $produk = DB::table('produk')->get();
 
-    $data = produk::all();
+        return view ('data_produk', ['judul' => $judul, 'produk' => $produk]);
+    }
 
-    return view('Produk', [
-        'produk'-> $data,
-        'judul'-> $judul,
-    ]);
-}
+    function update(){
 
-function update(){
-     
-}
+    }
 
-function hapus($id)
-{
-     echo $id;
-     $deleted = DB::table('produk')->where('ProdukID', $id)->delete();
-     if ($deleted) {
-        return redirect('/produk');
-     }
-}
+    function hapus($id)
+    {
+        echo $id;
+        $deleted = DB::table('produk')->where('ProdukID', $id)->delete();
+        if ($deleted){
+            return redirect('/produk');
+        }
+    }
 }
