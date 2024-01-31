@@ -6,10 +6,12 @@
     <br>
     <center>
     <form action="" method="POST">
+    @method ('POST')
+    @CSRF
         <table>
             <tr>
                 <td width="120"><p>Nama Produk</p></td>
-                <td><input type="text" name="Nama Produk" required></td>
+                <td><input type="text" name="NamaProduk" required></td>
             </tr>
             <tr>
                 <td><p>Harga</p></td>
@@ -17,11 +19,12 @@
             </tr>
             <tr>
                 <td><p>Stok</p></td>
-                <td><input type="text" name="stok" required></td>
+                <td><input type="text" name="Stock" required></td>
             </tr>
-</form>
+
         </table>
 <br>
-<button type="button" class="btn btn-outline-secondary">Kirim</button>
+<button type="submit" class="btn btn-outline-secondary">Kirim</button>
+</form>
 <center>
 @endsection

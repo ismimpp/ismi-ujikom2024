@@ -131,6 +131,20 @@ input[type=checkbox] {
   padding-top:8px;
 }
 
+.wrapper .btn{
+  width: 100%;
+  height: 45px;
+  background: #fff;
+  border: none;
+  outline: none;
+  border-radius: 40px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+  cursor: pointer;
+  font-size: 16px;
+  color: #333;
+  font-weight: 600;
+}
+
 input[type=submit] {
  	padding:5px 20px;
   text-shadow:0 -1px 0 rgba(0,0,0,0.4);
@@ -165,6 +179,12 @@ label:hover ~ input[type=password] {
   <p>
     <label for="password">PASSWORD</label>
     <input type="password" name="password" id="password">
+  </p>
+  <center><p>Level
+    <select name='level'>
+      <option value='petugas'>Petugas</option>
+      <option value='admin' selected='selected'>Admin</option>
+    </select></center>
   </p>
   <center><a href = "{{('register')}}"><button type="submit" name="login" class="btn-input">submit</button>
   <div class="bottom">

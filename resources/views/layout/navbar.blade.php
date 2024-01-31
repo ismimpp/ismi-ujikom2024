@@ -6,9 +6,6 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarScroll">
       <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
-        <li class="nav-item">
-          <a class="nav-link" href="{{('data_penjualan')}}">data penjualan</a>
-        </li>
         <div class="dropdown">
   <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
     produk
@@ -23,6 +20,14 @@
 <ul class="dropdown-menu">
     <li><a class="dropdown-item" href="{{('data_pelanggan')}}">data pelanggan</a></li>
     <li><a class="dropdown-item" href="{{('tambah_pelanggan')}}">tambah pelanggan</a></li>
+  </ul>
+  <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+    penjualan
+</button>
+  <ul class="dropdown-menu">
+    <li><a class="dropdown-item" href="{{('penjualan')}}">penjualan</a></li>
+    <li><a class="dropdown-item" href="{{('detail_penjualan')}}">detail penjualan</a></li>
+    <li><a class="dropdown-item" href="{{('data_penjualan')}}">data penjualan</a></li>
   </ul>
 </div>
     </div>

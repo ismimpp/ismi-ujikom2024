@@ -35,7 +35,7 @@ h1{
       <th scope="col">ID Pelanggan</th>
       <th scope="col">Nama Pelanggan</th>
       <th scope="col">Alamat</th>
-      <th scope="col">NomorTelepon</th>
+      <th scope="col">Nomor Telepon</th>
       <th scope="col">Aksi</th>
     </tr>
   </thead>
@@ -48,8 +48,8 @@ h1{
       <th scope="row">{{ $pelanggan->NomorTelepon }}</th>
       
       <td class="actions">
-        <a href="update_pelanggan"> <button type="button" class="btn btn-outline-info">update</button></a>
-        <a href="/Pelanggan/{{$pelanggan->PelangganID}}"> <button type="button" class="btn btn-outline-danger">hapus<i class="fas fa-trash"></i></button></a>
+      <a  type="button" class="btn btn-outline-info" href={{url("/data_pelanggan/update_pelanggan/$pelanggan->PelangganID")}}>update</button></a>
+        <a href={{url("/data_pelanggan/hapus/$pelanggan->PelangganID")}}> <button type="button" class="btn btn-outline-danger">hapus<i class="fas fa-trash"></i></button></a>
 </td>
 </tr>
 </tbody>

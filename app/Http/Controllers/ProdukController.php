@@ -14,16 +14,48 @@ class ProdukController extends Controller
         return view ('data_produk', ['judul' => $judul, 'produk' => $produk]);
     }
 
-    function update(){
+    function update($id){
+        $produk = DB::table('produk')->where('ProdukID', $id)->first();
+        return view ('update_produk', ['produk'=> $produk]);
+    }
 
+    function produk2(){
+       $isi = "tambah_produk";
+       return view('tambah_produk', ['isi' => $isi]);
+    }
+
+    function proses_tambahproduk(Request $request){
+        $tambahproduk = $request->NamaProduk;
+        $tambahharga = $request->Harga;
+        $tambahstock = $request->Stock;
+
+        DB::table('produk')->insert([
+            'NamaProduk' => $tambahproduk,
+            'Harga' => $tambahharga,
+            'Stock' => $tambahstock,
+        ]);
+        return redirect("/data_produk");
+    }
+
+    function proses_updateproduk(Request $request, $id){
+        $NamaProduk = $request->NamaProduk;
+        $Harga = $request->Harga;
+        $Stock = $request->Stock;
+
+        DB::table('produk')->where('ProdukID', $id)->update([
+            'NamaProduk' => $NamaProduk,
+            'Harga' =>$Harga,
+            'Stock' =>$Stock,
+        ]);
+        return redirect("/data_produk");
     }
 
     function hapus($id)
     {
         echo $id;
-        $deleted = DB::table('produk')->where('ProdukID', $id)->delete();
-        if ($deleted){
-            return redirect('/produk');
+        $delete= DB::table('produk')->where('ProdukID', $id)->delete();
+        //if ($deleted){
+            return redirect()->back();
         }
-    }
+    
 }

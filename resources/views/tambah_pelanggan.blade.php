@@ -5,10 +5,12 @@
     <br>
     <center>
     <form action="" method="POST">
+    @method ('POST')
+    @CSRF
         <table>
             <tr>
                 <td width="120"><p>Nama</p></td>
-                <td><input type="text" name="Nama" required></td>
+                <td><input type="text" name="NamaPelanggan" required></td>
             </tr>
             <tr>
                 <td><p>Alamat</p></td>
@@ -16,11 +18,11 @@
             </tr>
             <tr>
                 <td><p>No HP</p></td>
-                <td><input type="text" name="No_HP" required></td>
+                <td><input type="text" name="NomorTelepon" required></td>
             </tr>
-</form>
         </table>
 <br>
-<button type="button" class="btn btn-outline-secondary">Kirim</button>
+<button type="submit" class="btn btn-outline-secondary">Kirim</button>
+</form>
 <center>
 @endsection
