@@ -7,7 +7,5 @@ use Illuminate\Support\Facades\DB;
 
 class homeController extends Controller
 {
-    function home(){
-        return view('home');
-    }
+ 
 }

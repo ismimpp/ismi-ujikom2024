@@ -1,9 +1,9 @@
 <?php
 
 namespace App\Http\Controllers;
-
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use App\Models\penjualan;
 
 class PenjualanController extends Controller
 {
@@ -81,4 +81,21 @@ class PenjualanController extends Controller
     }
 }
 
+function detail_penjualan($id){
+
+    //return $id;
+    $penjualan = DB::table('penjualan')->where('penjualanID', $id)->get();
+    $detailpenjualan = DB::table('detailpenjualan')->where('penjualanID', $id)
+    ->join('produk', 'detailpenjualan.ProdukID', '=', 'produk.ProdukID')
+    ->get(); 
+
+    return view ('detail_penjualan', ['penjualan' => $penjualan, 'detailpenjualan' =>$detailpenjualan]);
+}
+
+function data_penjualan(){
+    $penjualan = DB::table('penjualan')->get();
+   
+
+    return view ('data_penjualan' , [ 'penjualan' => $penjualan]);
+}
 }

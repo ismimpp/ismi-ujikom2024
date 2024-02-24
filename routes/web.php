@@ -9,9 +9,22 @@ use App\Http\Controllers\homeController;
 use Illuminate\Support\Facades\Route;
 
 
-Route::get('/home', [homeController::class, 'home']);
-Route::get('/login', [loginController::class, 'login']);
-Route::get('/register', [AuthController::class, 'register']);
+Route::get('/', function () {
+    return view('welcome');
+});
+Route::get('/login', [loginController::class, 'login'])->name("login");
+Route::post('/login', [loginController::class, 'proseslogin']);
+Route::get('/logout', [loginController::class, 'logout']);
+// Route::get('loginpetugas', function (){
+//     return view( "loginpetugas" );
+//});
+
+Route::get('/register', [loginController::class, 'register'])-> name("register");
+Route::post('/register', [loginController::class,'registrasi']);
+
+Route::middleware(['auth'])->group(function(){
+    Route::get('/home', [loginController::class, 'home']);
+    Route::get('/home/logout', [loginController::class, 'login']);
 
 //produk
 Route::get('/tambah_produk', [ProdukController::class, 'produk2']);
@@ -31,8 +44,9 @@ Route::get('/data_pelanggan', [PelangganController::class, 'pelanggan']);
 
 //penjualan
 Route::get('/data_penjualan', [PenjualanController::class, 'data_penjualan']);
-Route::get('/detail_penjualan', [PenjualanController::class, 'detail_penjualan']);
+Route::get('/detail_penjualan/{id}', [PenjualanController::class, 'detail_penjualan']);
 Route::get('/penjualan', [PenjualanController::class, 'penjualan']);
 Route::post('/tambahpenjualan', [PenjualanController::class, 'store']);
 Route::post('/checkout', [PenjualanController::class, 'checkout']);
 // Route::post('/checkout', function(){return "checkout";});
+});

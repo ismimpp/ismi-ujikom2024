@@ -4,11 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>register</title><link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-<body>
-    <form method="POST" action="login">
-    @method('POST')
-    @CSRF
-
     <style>
 @import "compass/css3";
 
@@ -130,6 +125,20 @@ input[type=checkbox] {
   padding-top:8px;
 }
 
+.wrapper .btn{
+  width: 100%;
+  height: 45px;
+  background: #fff;
+  border: none;
+  outline: none;
+  border-radius: 40px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+  cursor: pointer;
+  font-size: 16px;
+  color: #333;
+  font-weight: 600;
+}
+
 input[type=submit] {
  	padding:5px 20px;
   text-shadow:0 -1px 0 rgba(0,0,0,0.4);
@@ -154,20 +163,32 @@ label:hover ~ input[type=password] {
  	background:#F5F0BB;
 }
     </style>
-<h1>AYO REGISTER DULU</h1>
-  <div class="inset">
-  <p>
-    <label for="email">NAMA</label>
-    <input type="text" name="nama">
-  </p>
-  <p>
-    <label for="email">EMAIL ADDRESS</label>
-    <input type="text" name="email" id="email">
-  </p>
-  <p>
-    <label for="password">PASSWORD</label>
-    <input type="password" name="password" id="password">
-  </p>
-  <center><a link href = "{{('register')}}"><button type="submit" name="register" class="btn-input">submit</button>
+<body>
+  <div class="wrapper">
+    <form method="POST" action="register">
+      <h1>Register</h1>
+      @method("POST")
+      @CSRF
+
+     <div class="input-box">
+        <input name="name" type="text" placeholder="Username"required>
+        <i class='bx bxs-contact'></i>
+      </div>
+
+      <div class="input-box">
+        <input name="email" type="text" placeholder="Email"required>
+        <i class='bx bxs-contact'></i>
+      </div>
+
+      <div class="input-box">
+        <input name="password" type="password" placeholder="Password"required>
+        <i class='bx bxs-lock-alt'></i>
+      </div>
+
+      <button type="submit" class="btn">Register</button>
+      <div class="login-link"></div>
+      <br>
+      <p>Don't have an account yet? <a href="login">Login</a></p>
+</form>
 </body>
 </html>

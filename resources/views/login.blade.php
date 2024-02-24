@@ -169,25 +169,28 @@ label:hover ~ input[type=password] {
  	background:#F5F0BB;
 }
     </style>
+<body>
+  <div class="wrapper">
+    <h1>Login</h1>
+    <form action="login" method="POST">
+      @method("POST")
+      @CSRF
 
-<h1>LOGIN DULU DISINI</h1>
-  <div class="inset">
-  <p>
-    <label for="email">USERNAME</label>
-    <input type="text" name="nama">
-  </p>
-  <p>
-    <label for="password">PASSWORD</label>
-    <input type="password" name="password" id="password">
-  </p>
-  <center><p>Level
-    <select name='level'>
-      <option value='petugas'>Petugas</option>
-      <option value='admin' selected='selected'>Admin</option>
-    </select></center>
-  </p>
-  <center><a href = "{{('register')}}"><button type="submit" name="login" class="btn-input">submit</button>
-  <div class="bottom">
-    <p>Belum punya akun? Register dulu</p> <a link href="{{('register')}}"></a><center>
+      <div class="input-box">
+        <input name="name" id="name" type="text" placeholder="username" required>
+        <i class='bx bxs-user'></i>
+      </div>
+
+      <div class="input-box">
+        <input name="password" id="password" type="password" placeholder="password" required>
+        <i class='bx bxs-lock-alt' ></i>
+      </div>
+
+      <button type="submit" class="btn">Login</button>
+      <div class="bottom">
+        <p><center>Don't have an account yet? <a href="{{('register')}}">Register dulu!<center></a></p>
+</form>
+</div>
+</div>
 </body>
 </html>

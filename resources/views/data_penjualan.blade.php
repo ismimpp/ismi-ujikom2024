@@ -23,32 +23,41 @@ h1{
 }
 </style>
 
+<body>
+   <form action="" method="POST" enctype="multipart/form-data">
 
-<div class="buat">
-  <br><br>
-<H1><CENTER>DATA PENJUALAN</CENTER></H1>
+   <div class="buat"
+   <br><br>
+       <h1><center><big>DATA PENJUALAN</big></center></h1>
 
-<div class="container">
+       <div class="container">
 
-    <table class="table table-secondary">
-  <thead>
-    <tr>
-      <th scope="col">tanggal</th>
-      <th scope="col">pelanggan</th>
-      <th scope="col">total</th>
-      <th scope="col">aksi</th>
-    </tr>
-  </thead>
-  <tbody>
-  <tr>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td class="actions">
-        <a href="{{('detail_penjualan')}}"> <button type="button" class="btn btn-outline-success">detail</button></a>
+       <table class="table table-secondary">
+        <thead>
+          <tr>
+            <th scope="col">Penjualan ID</th>
+            <th scope="col">Tanggal Penjualan</th>
+            <th scope="col">Total Harga</th>
+            <th scope="col">Pelanggan ID</th>
+            <th scope="col">opsi</th>
+          </tr>
+        </thead>
+        @foreach ($penjualan as $penjualan)
+        <tbody>
+          <tr>
+            <td>{{$penjualan->penjualanID}}</td>
+            <td>{{$penjualan->TanggalPenjualan}}</td>
+            <td>{{$penjualan->TotalHarga}}</td>
+            <td>{{$penjualan->PelangganID}}</td>
+
+            <td class="actions">
+              <a type="button" class="btn btn-secondary" href={{url("/detail_penjualan/$penjualan->penjualanID")}}>Detail</button></a>
 </td>
-    </tr>
-</tbody>
+</form>
+          </tr>
+        </tbody>
+        @endforeach
+</table>
 </div>
 </div>
 @endsection
