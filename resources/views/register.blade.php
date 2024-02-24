@@ -172,7 +172,7 @@ label:hover ~ input[type=password] {
 
      <div class="input-box">
         <input name="name" type="text" placeholder="Username"required>
-        <i class='bx bxs-contact'></i>
+        <i class='bx bxs-user'></i>
       </div>
 
       <div class="input-box">
