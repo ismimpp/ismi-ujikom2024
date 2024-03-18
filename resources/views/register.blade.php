@@ -109,7 +109,7 @@ input[type=checkbox] {
 }
 
 .p-container {
- 	padding:0 20px 20px 20px; 
+ 	padding:0 10px 10px 10px; 
 }
 
 .p-container:after {
@@ -126,7 +126,7 @@ input[type=checkbox] {
 }
 
 .wrapper .btn{
-  width: 100%;
+  width: 90%;
   height: 45px;
   background: #fff;
   border: none;
@@ -136,11 +136,11 @@ input[type=checkbox] {
   cursor: pointer;
   font-size: 16px;
   color: #333;
-  font-weight: 600;
+  font-weight: 500;
 }
 
 input[type=submit] {
- 	padding:5px 20px;
+ 	padding:5px 10px;
   text-shadow:0 -1px 0 rgba(0,0,0,0.4);
   background:#F8FAE5;
   color: white;
@@ -171,7 +171,7 @@ label:hover ~ input[type=password] {
       @CSRF
 
      <div class="input-box">
-        <input name="name" type="text" placeholder="Username"required>
+        <input name="name" type="text" placeholder="username"required>
         <i class='bx bxs-user'></i>
       </div>
 
@@ -185,10 +185,15 @@ label:hover ~ input[type=password] {
         <i class='bx bxs-lock-alt'></i>
       </div>
 
-      <button type="submit" class="btn">Register</button>
+      <!-- <label for="level">Level:</label>
+      <select name="level">
+      <option value="petugas">Petugas</option>
+      <option value="admin">Admin</option>
+      </select> -->
+
+      <center><button type="submit" class="btn">Register</button></center>
       <div class="login-link"></div>
       <br>
-      <p>Don't have an account yet? <a href="login">Login</a></p>
 </form>
 </body>
 </html>

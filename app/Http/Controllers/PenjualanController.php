@@ -3,11 +3,15 @@
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\facades\Auth;
 use App\Models\penjualan;
 
 class PenjualanController extends Controller
 {
     function penjualan(){
+        if(Auth::user()->status === "petugas"){
+            return abort(403);
+        }
        $produk = DB::table("produk")->get();
        $pelanggan = DB::table("pelanggan")->get();
 
@@ -37,7 +41,6 @@ class PenjualanController extends Controller
 
     function store(request $request){
 
-
     $produk = DB::table('produk')->where('ProdukID', $request->produk)->first();
     // return $produk;
     $DataPenjualan = DB::table('penjualan')->where('penjualanID', $request->idPenjualan)->first();
@@ -55,14 +58,18 @@ class PenjualanController extends Controller
     if($produk->Stock - $request->qty < 0 ){
         return redirect()->back()->with("info","stock tidak mencukupi");
     }else{
+
+
         $detailpenjualan = DB::table("detailpenjualan")->insert([
             'PenjualanID' => $request->idPenjualan,
             'ProdukID' => $request->produk,
             'JumlahProduk' => $request->qty,
             'SubTotal' => $request->qty * $produk->Harga
         ]);
-        DB::table("produk")->where('produkID', $request->produk)->update(['Stock'=> $produk->Stock - $request->qty]);
 
+        //update stok produk
+        DB::table("produk")->where('produkID', $request->produk)->update(['Stock'=> $produk->Stock - $request->qty]);
+       //kalo berhasil
         return redirect()->back();
     }
 

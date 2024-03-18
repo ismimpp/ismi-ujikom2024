@@ -17,10 +17,16 @@ class loginController extends Controller
     }
 
     function register(){
+        if(Auth::user()->status === "petugas"){
+            return abort(403);
+        }
         return view ('register');
     }
 
     function home(){
+
+
+        // return Auth::user();
         return view ('home');
     }
 
@@ -33,7 +39,7 @@ class loginController extends Controller
         }else{
             return redirect('/login')->with("error", "email atau password salah"); 
         }
-    }
+     }
 
     function logout(){
         Auth::logout();

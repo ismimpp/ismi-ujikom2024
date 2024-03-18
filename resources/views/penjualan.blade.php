@@ -34,6 +34,11 @@ h4{
 <div class="row g-3 align-item-center">
 
 <div class="col-4 p-4">
+  @if (Session::has("info"))
+
+  {{Session ("info")}}
+
+  @endif
     <h4>Data Produk</h4>
   <form action='{{ url("/tambahpenjualan") }}' method="post">
   @method ('POST')

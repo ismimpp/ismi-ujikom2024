@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\facades\Auth;
 use App\Models\Produk;
 
 class ProdukController extends Controller
@@ -20,6 +21,9 @@ class ProdukController extends Controller
     }
 
     function produk2(){
+        if(Auth::user()->status === "petugas"){
+            return abort(403);
+        }
        $isi = "tambah_produk";
        return view('tambah_produk', ['isi' => $isi]);
     }

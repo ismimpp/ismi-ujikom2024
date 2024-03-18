@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
+use Illuminate\Support\facades\Auth;
 use Illuminate\Support\Facades\DB;
 use App\Models\Pelanggan;
 
@@ -15,11 +16,15 @@ class PelangganController extends Controller
     }
 
     function tambah_pelanggan(){
+        if(Auth::user()->status === "petugas"){
+            return abort(403);
+        }
         $isi = "tambah_pelanggan";
         return view('tambah_pelanggan', ['isi' => $isi]);
      }
  
      function proses_tambahpelanggan(Request $request){
+
          $tambahpelanggan = $request->NamaPelanggan;
          $tambahalamat = $request->Alamat;
          $tambahnomortelepon = $request->NomorTelepon;
@@ -33,6 +38,9 @@ class PelangganController extends Controller
      }
 
     function update($id){
+        if(Auth::user()->status === "petugas"){
+            return abort(403);
+        }
         $produk = DB::table('pelanggan')->where('PelangganID', $id)->first();
         return view ('update_pelanggan', ['pelanggan'=> $pelanggan]);
     }

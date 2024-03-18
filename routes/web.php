@@ -49,4 +49,5 @@ Route::get('/penjualan', [PenjualanController::class, 'penjualan']);
 Route::post('/tambahpenjualan', [PenjualanController::class, 'store']);
 Route::post('/checkout', [PenjualanController::class, 'checkout']);
 // Route::post('/checkout', function(){return "checkout";});
+
 });

@@ -172,7 +172,7 @@ label:hover ~ input[type=password] {
 <body>
   <div class="wrapper">
     <h1>Login</h1>
-    <form action="login" method="POST">
+    <form action="/login" method="POST">
       @method("POST")
       @CSRF
 
@@ -188,7 +188,6 @@ label:hover ~ input[type=password] {
 
       <button type="submit" class="btn">Login</button>
       <div class="bottom">
-        <p><center>Don't have an account yet? <a href="{{('register')}}">Register dulu!<center></a></p>
 </form>
 </div>
 </div>

@@ -49,7 +49,7 @@ h1{
       
       <td class="actions">
       <a  type="button" class="btn btn-outline-info" href={{url("/data_pelanggan/update_pelanggan/$pelanggan->PelangganID")}}>update</button></a>
-        <a href={{url("/data_pelanggan/hapus/$pelanggan->PelangganID")}}> <button type="button" class="btn btn-outline-danger">hapus<i class="fas fa-trash"></i></button></a>
+        <a href={{url("/data_pelanggan/hapus/$pelanggan->PelangganID")}}> <button type="button" class="btn btn-outline-danger"  onclick = "return confirm('Anda Yakin Ingin Hapus Pelanggan ini?');" type="submit">hapus<i class="fas fa-trash"></i></button></a>
 </td>
 </tr>
 </tbody>

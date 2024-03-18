@@ -47,7 +47,7 @@ h1{
       
       <td class="actions">
         <a  type="button" class="btn btn-outline-info" href={{url("/data_produk/update_produk/$produk->ProdukID")}}>update</button></a>
-        <a href={{url("/data_produk/hapus/$produk->ProdukID")}}> <button type="button" class="btn btn-outline-danger">hapus<i class="fas fa-trash"></i></button></a>
+        <a href={{url("/data_produk/hapus/$produk->ProdukID")}}> <button type="button" class="btn btn-outline-danger"  onclick = "return confirm('Anda Yakin Ingin Hapus produk Ini?');" type="submit" >hapus<i class="fas fa-trash"></i></button></a>
 </td>
 </tr>
 </tbody>
